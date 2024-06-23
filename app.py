@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from webscraping import perform_web_scraping
 from models import modelo
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
 
 @app.route('/')
 def index():

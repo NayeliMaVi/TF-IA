@@ -26,11 +26,10 @@ function showResult(prediction) {
 
 document.addEventListener("DOMContentLoaded", function () {
     var form = document.querySelector("form");
-    var loader = document.getElementById("loader");
+    
     form.addEventListener("submit", function (event) {
         event.preventDefault(); // Evita que se envíe el formulario de manera convencional
-        // Mostrar el spinner de carga
-        loader.style.display = "block";
+
 
         var formData = new FormData(form);
         fetch('/process-link', {
@@ -39,9 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json())
         .then(data => {
-            
             showResult(data.prediction);
-            loader.style.display = "none";
         })
         .catch(error => console.error('Error:', error));
     });
