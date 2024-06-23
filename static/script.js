@@ -1,12 +1,12 @@
 var modelo = null;
 
-//Cargar modelo
-(async () => {
-    const response = await fetch('decision_tree_model.joblib');
-    const modelFile = await response.arrayBuffer();
-    const model = await joblib.load(new Uint8Array(modelFile));
-    modelo = model; // Asignar el modelo cargado a la variable global
-})(); 
+// //Cargar modelo
+// (async () => {
+//     const response = await fetch('decision_tree_model.joblib');
+//     const modelFile = await response.arrayBuffer();
+//     const model = await joblib.load(new Uint8Array(modelFile));
+//     modelo = model; // Asignar el modelo cargado a la variable global
+// })(); 
 
 // Funcion donde se realiza la prediccion
 function showResult(prediction) {
@@ -15,10 +15,10 @@ function showResult(prediction) {
     var text = document.getElementById("textResult");
 
     if (prediction == 0) {
-        image.src = "../static/imgs/thumb_down.webp";
+        image.src = "./static/imgs/thumb_down.webp";
         text.textContent = "¡CUIDADO! La oferta de trabajo ingresada es FALSA!";
     } else {
-        image.src = "../static/imgs/thumb_up.webp";
+        image.src = "./static/imgs/thumb_up.webp";
         text.textContent = "La oferta de trabajo ingresada es verdadera!";
     }
     content.style.display = "flex";
