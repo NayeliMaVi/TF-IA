@@ -4,7 +4,7 @@ from webscraping import perform_web_scraping
 from models.modelo import predict_new_entry
 
 app = Flask(__name__, template_folder='.')
-CORS(app)
+CORS(app, resources={r"/process-link": {"origins": "https://nayelimavi.github.io"}})
 
 @app.route('/')
 def index():
