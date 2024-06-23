@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 from webscraping import perform_web_scraping
 from models.modelo import predict_new_entry
 
 app = Flask(__name__, template_folder='.')
+CORS(app)
 
 @app.route('/')
 def index():
