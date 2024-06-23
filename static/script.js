@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         var formData = new FormData(form);
-        fetch('http://localhost:5000/process-link', {
+        fetch('http://127.0.0.1:5000/process-link', {
             method: 'POST',
             body: formData
         })
